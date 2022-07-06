@@ -12,6 +12,7 @@ var sassOpts = {
  outputStyle: "expanded",
 };
 
+// Setup SASS task
 gulp.task(
  "sass",
  gulp.series(function () {
@@ -36,6 +37,7 @@ gulp.task(
    },
   });
 
+  // Run these tasks when the matching files are updated
   gulp.watch("src/scss/**/*.scss", gulp.series("sass"));
   gulp.watch(["css/*.css", "*.html"]).on("change", browserSync.reload);
  })
