@@ -15,15 +15,13 @@ var sassOpts = {
 gulp.task(
  "sass",
  gulp.series(function () {
-  return (
-   gulp
-    .src(input)
-    // .pipe(sourcemaps.init())
-    .pipe(sass(sassOpts).on("error", sass.logError))
-    // .pipe(sourcemaps.write(''))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(output))
-  );
+  return gulp
+   .src(input)
+   .pipe(sourcemaps.init())
+   .pipe(sass(sassOpts).on("error", sass.logError))
+   .pipe(sourcemaps.write(""))
+   .pipe(autoprefixer())
+   .pipe(gulp.dest(output));
  })
 );
 
